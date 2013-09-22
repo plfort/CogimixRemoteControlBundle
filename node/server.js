@@ -13,7 +13,7 @@ if(process.env.NODE_ENV=='dev'){
 			};
 	var app = express.createServer(options);
 }
-var io = require('socket.io').listen(8000);
+var io = require('socket.io').listen(8100);
 
 io.configure(function(){
 	io.set('log level', 2);	
