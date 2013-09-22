@@ -1,0 +1,9 @@
+{
+"name": "cogimix-remote-control-node-server",
+"version":"1.0.0",
+"dependencies": {
+  "socket.io": "0.9.16",
+  "express": "2.x",
+  "yaml-config":"0.3.0"
+  }
+}

@@ -1,0 +1,69 @@
+{% spaceless %}
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, height=device-height,initial-scale=1">
+<title>Cogimix remote control</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script id="trackItem" type="text/x-dot-template">
+<li><a href="#" id="[[!it.track.id]]">
+  <img src="[[!it.track.thumbnails ]]">
+  <h2>[[!it.track.title ]]</h2>
+  <p>[[!it.track.artist ]]</p>
+  <p class="ui-li-aside">Play</p>
+</a>
+<a class="sort-handle">
+</a>
+</li>
+</script>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+{% javascripts
+'@CogimixRemoteControlBundle/Resources/assets/js/jquery-ui-1.10.3.custom.js'
+'@CogimixRemoteControlBundle/Resources/assets/js/jquery.ui.touch-punch.min.js'
+'@CogimixRemoteControlBundle/Resources/assets/js/iscroll.js'
+'@CogimixRemoteControlBundle/Resources/assets/js/jquery.mobile.iscrollview.js'
+
+        '@CogimixRemoteControlBundle/Resources/assets/js/socket.io.min.js'
+        '@CogimixRemoteControlBundle/Resources/assets/js/doT.min.js'
+        '@CogimixBundle/Resources/assets/js/templating.js'
+        '@CogimixBundle/Resources/assets/js/cogimixEvents.js'
+        '@CogimixRemoteControlBundle/Resources/assets/js/remote-constants.js'
+        '@CogimixRemoteControlBundle/Resources/assets/js/remote.js'filter="?yui_js"%}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% stylesheets
+               '@CogimixRemoteControlBundle/Resources/assets/less/remote.css.less'
+                '@CogimixRemoteControlBundle/Resources/assets/less/jquery.mobile.iscrollview.css'
+	     filter="less,cssembed,cssrewrite"%}
+<link rel="stylesheet" href="{{ asset_url}}" type="text/css" />
+{% endstylesheets %}
+<script>
+doT.templateSettings = {
+		  evaluate:    /\[\[([\s\S]+?)\]\]/g,
+		  interpolate: /\[\[=([\s\S]+?)\]\]/g,
+		  encode:      /\[\[!([\s\S]+?)\]\]/g,
+		  use:         /\[\[#([\s\S]+?)\]\]/g,
+		  define:      /\[\[##\s*([\w\.$]+)\s*(\:|=)([\s\S]+?)#\]\]/g,
+		  conditional: /\[\[\?(\?)?\s*([\s\S]*?)\s*\]\]/g,
+		  iterate:     /\[\[~\s*(?:\]\]|([\s\S]+?)\s*\:\s*([\w$]+)\s*(?:\:\s*([\w$]+))?\s*\]\])/g,
+		  varname: 'it',
+		  strip: true,
+		  append: true,
+		  selfcontained: false
+	};
+var nodeUrl = '{{ remote_node_url }}';
+var token = '{{ token }}';
+</script>
+</head>
+<body>
+
+{% block main %}
+
+
+{% endblock main %}
+</body>
+</html>
+{% endspaceless %}

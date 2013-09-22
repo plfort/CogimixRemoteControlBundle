@@ -1,0 +1,156 @@
+
+.button{
+	width: 100px;
+}
+#currentPlaylist{
+
+	li{
+		&.current{
+			background-color: #FFFEF4;
+			background-image: -webkit-gradient(linear,left top,left bottom,from(#FFE5A1),to(#FFFEF4));
+			background-image: -webkit-linear-gradient(#FFE5A1,#FFFEF4);
+			background-image: -moz-linear-gradient(#FFE5A1,#FFFEF4);
+			background-image: -ms-linear-gradient(#FFE5A1,#FFFEF4);
+			background-image: -o-linear-gradient(#FFE5A1,#FFFEF4);
+			background-image: linear-gradient(#FFE5A1,#FFFEF4);
+		}
+	}
+}
+#footer{
+	text-align:center;
+	background-color:#34495e;
+	//background-image: linear-gradient(#34495e,#121525);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#34495e),to(#121525));
+	background-image: -webkit-linear-gradient(#34495e,#121525);
+	background-image: -moz-linear-gradient(#34495e,#121525);
+	background-image: -ms-linear-gradient(#34495e,#121525);
+	background-image: -o-linear-gradient(#34495e,#121525);
+	background-image: linear-gradient(#34495e,#121525);
+}
+
+#cursorForm {
+	input.ui-input-text.ui-slider-input{
+	display:none;
+	}
+	.ui-slider-track, .ui-slider-switch{
+	margin: 0px 15px 0px 15px;
+	}
+}
+#leftControls{
+	min-width:60px;
+	float:left; 
+}
+#controlsWrapper{
+overflow:hidden;
+min-width:200px;
+
+text-align:center;
+}
+
+#rightControls{
+	min-width:50px;
+	float:right; 
+}
+
+#controls{
+list-style:none; 
+position:relative;
+
+}
+
+#title{
+	font-size:0.9em;
+}
+
+.controls-norm{
+	position: relative;
+	left: -15px;
+	background: url('../images/flatcontrol40.png');
+    width:40px;
+	height:40px;
+	display:inline-block;
+	//float:left;
+	transition:none;
+	&.hide{
+		display:none;
+	}
+
+}
+
+.controls-mini{
+	background: url('../images/controls_mini_flat.png');
+	&.active{
+		background: url('../images/controls_mini_flat.png');
+	}
+	margin-top:10px;
+	margin-left:5px;
+    width:26px;
+	height:26px;
+	display:block;
+	float:left;
+	&.hide{
+		display:none;
+	}
+}
+
+
+#playBtn{
+
+	background-position: 0px 0;
+	&.disabled,&:hover{
+		background-position:  0px -40px;
+	}
+	
+}
+
+#nextBtn{
+
+	background-position:  -80px 0;
+	&.disabled,&:hover{
+		background-position:  -80px -40px;
+	}
+	
+}
+
+#previousBtn{
+
+	background-position:  -120px 0;
+	&.disabled,&:hover{
+		background-position:  -120px -40px;
+	}
+	
+	
+}
+
+#pauseBtn{
+	background-position:  -40px 0;
+	&.disabled,&:hover{
+		background-position:  -40px -40px;
+	}
+}
+
+
+#shuffleBtn{
+   
+	background-position:  0px 0px;
+	&.active{
+		background-position:  0px 26px;
+	}
+	
+}
+
+#repeatAllBtn{
+   
+	background-position:-26px 0px;
+	&.active{
+		background-position: -26px 26px;
+	}
+	
+}
+#volumeBtn{
+	
+	background-position:-51px 0px;
+	&.mute{
+		background-position:-51px 26px;
+	}
+}

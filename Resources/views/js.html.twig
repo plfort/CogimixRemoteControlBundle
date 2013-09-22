@@ -1,0 +1,15 @@
+{% javascripts
+        '@CogimixRemoteControlBundle/Resources/assets/js/socket.io.min.js'
+
+'@CogimixBundle/Resources/assets/js/cogimixEvents.js'
+        '@CogimixRemoteControlBundle/Resources/assets/js/remote-constants.js'
+        '@CogimixRemoteControlBundle/Resources/assets/js/jquery.qrcode.min.js'
+        '@CogimixRemoteControlBundle/Resources/assets/js/browser.js'
+
+        filter="?yui_js"%}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+<script>
+var nodeUrl = '{{ browser_node_url }}';
+var loggerRemote = JSLog.Register('CogimixRemote');
+</script>

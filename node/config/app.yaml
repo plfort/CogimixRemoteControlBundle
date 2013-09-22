@@ -1,0 +1,6 @@
+default:
+production:
+  ssl:
+    ca : ''
+    key : ''
+    certs : ''

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+		<services>
+		    
+
+		  <service id="remot_control.menu_renderer" class="Cogipix\CogimixRemoteControlBundle\ViewHooks\Menu\MenuRenderer">
+                <tag name="cogimix.menu_renderer"/>
+           </service>
+  
+           <service id="remote_control.jsimport_renderer" class="Cogipix\CogimixRemoteControlBundle\ViewHooks\Javascript\JavascriptImportRenderer">
+                <tag name="cogimix.jsimport_renderer"/>
+           </service>
+                      
+           <service id="remote_control.modal_renderer" class="Cogipix\CogimixRemoteControlBundle\ViewHooks\Modal\ModalRenderer">
+                <tag name="cogimix.modal_renderer"/>
+           </service>
+           
+           <service id="remote_control.cssimport_renderer" class="Cogipix\CogimixRemoteControlBundle\ViewHooks\Css\CssImportRenderer">
+                <tag name="cogimix.cssimport_renderer"/>
+           </service>
+           
+             <service id="remote_control.tiw_extension" class="Cogipix\CogimixRemoteControlBundle\Twig\CogimixRemoteTwigExtension">
+                <argument type="string">%cogimix_remote.node_host%</argument>
+                <tag name="twig.extension"/>
+           </service>
+             
+		</services>
+</container>

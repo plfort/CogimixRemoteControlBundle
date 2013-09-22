@@ -1,0 +1,49 @@
+{% extends 'CogimixRemoteControlBundle::base.html.twig' %}
+
+{% block main %}
+<div data-role="page">
+	<!-- CONTENT -->
+	<div data-role="content">
+        <ul id="currentPlaylist" data-role="listview" data-split-icon="grid" ></ul>
+    </div><!-- /content -->
+	<div id="footer" data-role="footer" data-position="fixed">
+			<form id="cursorForm">
+    				<label id="title" for="cursor">Cogimix</label>
+    				<input type="range" data-mini="true" name="cursor" id="cursor" data-highlight="true" min="0" max="100" value="0">
+			</form>
+	    <div id="leftControls">
+            <a id="shuffleBtn" href="#" class="controls-mini"   ></a>
+		    <a id="repeatAllBtn" href="#" class="controls-mini"  ></a>
+	    </div>
+        <div id="rightControls">
+            <a id="volumeBtn" data-rel="dialog" href="#volumeDialog" class="controls-mini"  ></a>
+        </div>
+
+		<div id="controlsWrapper">
+    		<div id="controls">
+
+
+            		<a id="previousBtn" class="button controls-norm"   href="#"></a>
+            		<a id="pauseBtn" class="button controls-norm"   href="#"></a>
+            		<a id="playBtn" href="#" class="button controls-norm"  ></a>
+            		<a id="nextBtn" href="#" class="button controls-norm"   ></a>
+    		</div>
+		</div>
+
+	</div>
+</div>
+
+<div id="volumeDialog" data-role="dialog">
+	<!-- CONTENT -->
+	<div data-role="header" >
+
+	<h1>Volume</h1>
+	</div>
+	<div data-role="content">
+      <form>
+    	<input type="range" data-mini="false" name="volumeSlider" id="volumeSlider" data-highlight="true" min="0" max="100" >
+	 </form>
+    </div><!-- /content -->
+</div>
+
+{% endblock main %}
