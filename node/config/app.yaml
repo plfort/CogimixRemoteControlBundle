@@ -5,5 +5,6 @@ default:
     cert : '/path/to/crt'
 production:
   ssl:
-    key : '/home/pilou/ssl_dev/my.new.key'
-    cert : '/home/pilou/ssl_dev/server.crt'
+    ca: "/etc/ssl/startssl13/sub.class1.server.ca.pem"
+    key: "/home/cogimix/ssl/sslcogimix/ssl_dec.key"
+    cert: "/home/cogimix/ssl/sslcogimix/ssl.crt"
