@@ -1,14 +1,18 @@
 {% spaceless %}
-<div id="remoteScanModal" class="modal hide fade">
- <div class="modal-header">
- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
-    <h3>{{ 'modal_remote_title'|trans }}</h3>
- </div>
- <div class="modal-body">
+<div id="remoteScanModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+         <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <h4 class="modal-title">{{ 'modal_remote_title'|trans }}</h4>
+         </div>
+         <div class="modal-body">
 
-    <h4 class="span6 center">{{ 'modal_span_desc'|trans }}</h4>
-    <div id="remoteQr" class="span6 center"></div>
-    <div id="remoteLink" class="span6 center"></div>
+            <h4 class="span6 center">{{ 'modal_span_desc'|trans }}</h4>
+            <div id="remoteQr" class="span6 center"></div>
+            <div id="remoteLink" class="span6 center"></div>
+         </div>
+ </div>
  </div>
 </div>
 {% endspaceless %}
