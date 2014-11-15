@@ -3,39 +3,18 @@ var tokenMobile={};
 var fs = require('fs');
 var settings = require('yaml-config').readConfig(require('path').resolve(__dirname, 'config/app.yaml'));
 var express = require('express');
-console.log("Current NODE_ENV : "+process.env.NODE_ENV);
-var app;
-if(process.env.NODE_ENV=='dev'){
-	var app = express.createServer();
-}else{
-	var options = null;
-	if("ssl" in settings){
-		options = {
-				 
-				  key:  fs.readFileSync(settings.ssl.key),
-				  cert: fs.readFileSync(settings.ssl.cert)
-				};
-		if("ca" in settings){
-			options.ca =   fs.readFileSync(settings.ssl.ca);
-		}
-		
-	}
-	if(options!= null){
-		app = express.createServer(options);
-	}else{
-		app = express.createServer();
-	}
-	
-}
+
+var app = express.createServer();
+
 var io = require('socket.io').listen(app);
 
 io.configure(function(){
-	io.set('log level', 2);	
+	io.set('log level', 5);	
 });
 app.listen(8100);
 
 io.of('/browser').authorization(function (handshakeData, callback) {
-	  
+	
 	  if(handshakeData.query.token){
 		  console.log('------- Token '+handshakeData.query.token+' -------');
 		  handshakeData.token=handshakeData.query.token;
