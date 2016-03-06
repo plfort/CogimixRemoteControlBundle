@@ -1,7 +1,7 @@
 <?php
 namespace Cogipix\CogimixRemoteControlBundle\Twig;
 
-class CogimixRemoteTwigExtension extends \Twig_Extension
+class CogimixRemoteTwigExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
 {
     const BROWSER_NODE_URL = "browser_node_url";
     const REMOTE_NODE_URL = "remote_node_url";
